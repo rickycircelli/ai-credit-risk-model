@@ -5,7 +5,9 @@ import pandas as pd
 from sklearn.impute import SimpleImputer
 
 # Load trained model
-model = joblib.load("credit_model.pkl")
+import os
+model_path = os.path.join(os.path.dirname(__file__), "credit_model.pkl")
+model = joblib.load(model_path)
 
 # Page config
 st.set_page_config(page_title="Consent-Aware Credit Risk", layout="centered")
